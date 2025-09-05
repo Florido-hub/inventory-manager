@@ -2,6 +2,8 @@ package com.github.leopc17.inventorymanager.infrastructure.adapter;
 
 import com.github.leopc17.inventorymanager.domain.entity.Product;
 import com.github.leopc17.inventorymanager.domain.output.ProductRepositoryPort;
+import com.github.leopc17.inventorymanager.infrastructure.entity.ProductEntity;
+import com.github.leopc17.inventorymanager.infrastructure.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -20,26 +22,32 @@ public class ProductRepositoryAdapter implements ProductRepositoryPort {
 
     @Override
     public Product createProduct(Product product) {
-        return null;
+        ProductEntity entity = ProductMapper.productEntity(product);
+        ProductEntity saved = productJpaRepository.save(entity);
+        return ProductMapper.product(saved);
     }
 
     @Override
     public List<Product> getAllProduct() {
-        return null;
+        var produtos = productJpaRepository.findAll();
+        return produtos.stream().map(x-> ProductMapper.product(x)).toList();
     }
 
     @Override
     public Product getById(UUID id) {
-        return null;
+        var produto = productJpaRepository.findById(id);
+        var product = ProductMapper.product(produto.get());
+        return product;
     }
 
     @Override
     public void updateProduct(Product product, UUID id) {
-
+        product.setId(id);
+        productJpaRepository.save(ProductMapper.productEntity(product));
     }
 
     @Override
     public void deleteById(UUID id) {
-
+        productJpaRepository.deleteById(id);
     }
 }
