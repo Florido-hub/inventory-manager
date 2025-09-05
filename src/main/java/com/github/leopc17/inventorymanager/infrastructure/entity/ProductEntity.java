@@ -17,16 +17,17 @@ public class ProductEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(name = "price", nullable = false)
+    @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(name = "longDescription",nullable = false)
+    @Column(nullable = false)
     private String longDescription;
 
-    @Column(name = "price", nullable = false)
+    @Column(nullable = false)
     private String shortDescription;
 
-    @Column(name = "price", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private ProductCategory category;
 
     public ProductEntity() {

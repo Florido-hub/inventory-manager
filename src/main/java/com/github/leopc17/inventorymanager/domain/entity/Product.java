@@ -1,6 +1,8 @@
 package com.github.leopc17.inventorymanager.domain.entity;
 
 import com.github.leopc17.inventorymanager.domain.enums.ProductCategory;
+import com.github.leopc17.inventorymanager.infrastructure.entity.ProductEntity;
+
 import java.math.BigDecimal;
 import java.util.UUID;
 
