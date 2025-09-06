@@ -5,7 +5,12 @@ spring:
     url: jdbc:h2:mem:products
     username: sa
   jpa:
+    hibernate:
+      ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
   main:
     lazy-initialization: false
   h2:

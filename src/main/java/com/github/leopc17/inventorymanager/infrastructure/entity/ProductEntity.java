@@ -20,11 +20,12 @@ public class ProductEntity {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "TEXT",nullable = false)
+    private String shortDescription;
+
+    @Column(columnDefinition = "TEXT",nullable = false)
     private String longDescription;
 
-    @Column(nullable = false)
-    private String shortDescription;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

@@ -1,4 +1,4 @@
-package com.github.leopc17.inventorymanager.infrastructure.adapter;
+package com.github.leopc17.inventorymanager.infrastructure.adapter.output;
 
 import com.github.leopc17.inventorymanager.domain.entity.Product;
 import com.github.leopc17.inventorymanager.domain.output.ProductRepositoryPort;
