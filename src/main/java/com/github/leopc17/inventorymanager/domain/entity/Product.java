@@ -15,6 +15,18 @@ public class Product{
     private String shortDescription;
     private ProductCategory category;
 
+    public Product() {
+    }
+
+    public Product(UUID id, String name, BigDecimal price, String longDescription, String shortDescription, ProductCategory category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.longDescription = longDescription;
+        this.shortDescription = shortDescription;
+        this.category = category;
+    }
+
     public UUID getId() {
         return id;
     }
